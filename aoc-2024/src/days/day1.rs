@@ -2,7 +2,7 @@ use std::io::{self, BufRead, BufReader};
 use std::fs::File;
 use std::collections::HashMap;
 
-fn main() -> io::Result<()>{
+pub fn main() -> io::Result<()>{
     let reader = BufReader::new(File::open("res/input.txt")?);
 
     let (mut first_list, mut second_list): (Vec<i32>, Vec<i32>) = reader.lines()
