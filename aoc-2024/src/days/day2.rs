@@ -2,7 +2,7 @@ use std::io::{self, BufRead, BufReader};
 use std::fs::File;
 
 pub fn main() -> io::Result<()>{
-    let reader = BufReader::new(File::open("res/input.txt")?);
+    let reader = BufReader::new(File::open("res/input2.txt")?);
 
     // Parse file into reports with levels
     let mut reports = Vec::new();
@@ -17,7 +17,7 @@ pub fn main() -> io::Result<()>{
     }
 
     let mut safe_count = 0;
-    
+
     for report in &reports {
         if is_safe(report) {
             safe_count += 1;
@@ -45,7 +45,6 @@ pub fn main() -> io::Result<()>{
     }
 
     println!("Dampened Safe Count: {dampened_safe_count}");
-
     
     Ok(())
 }
